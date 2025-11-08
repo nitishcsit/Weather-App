@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Condition</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Weather Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/weather.css">
+</head>
+<body>
+<!-- Animated clouds -->
+<div class="cloud-animation"></div>
+<div class="cloud-animation"></div>
+<div class="cloud-animation"></div>
+
+<div class="container">
+    <h1 class="app-title">⛅ Weather <span>Condition</span> ⛅</h1>
+
+    <div class="card results-card">
+        <!-- Error Message -->
+        <div th:if="${error}" class="error-message">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            <span th:text="${error}"></span>
+        </div>
+
+        <!-- Weather Data -->
+        <div th:unless="${error}">
+            <div class="location">
+                <h2 th:text="${city + ', ' + country}"></h2>
+            </div>
+
+            <div class="weather-icon">
+                <i th:class="${weatherIcon}"></i>
+            </div>
+
+            <div class="temperature" th:text="${temperature + '°C'}"></div>
+
+            <div class="description" th:text="${weatherDescription}"></div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-info-circle mr-2"></i>Description</span>
+                    <span class="detail-value" th:text="${weatherDescription}"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-tint mr-2"></i>Humidity</span>
+                    <span class="detail-value" th:text="${humidity + '%'}"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-wind mr-2"></i>Wind Speed</span>
+                    <span class="detail-value" th:text="${windSpeed + ' m/s'}"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-thermometer-half mr-2"></i>Temperature</span>
+                    <span class="detail-value" th:text="${temperature + '°C'}"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="/" class="btn-back">
+                <i class="fas fa-search mr-2"></i> Search Again
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p></p>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* Search Page Styles */
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    padding: 20px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.search-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.search-card:hover {
+    transform: translateY(-5px);
+}
+
+.search-card .card-body {
+    padding: 2rem;
+}
+
+.search-card .card-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.search-card .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-card .form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.search-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #4776E6, #8E54E9);
+    border: none;
+    border-radius: 50px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(116, 79, 168, 0.9);
+}
+
+.weather-icon {
+    font-size: 4rem;
+    margin: 20px 0;
+    color: #FFD700;
+}
+
+.app-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.app-title span {
+    color: #FFD700;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cloud-animation {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    top: 20%;
+    left: -120px;
+    animation: cloudMove 25s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+.cloud-animation:before,
+.cloud-animation:after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+}
+
+.cloud-animation:before {
+    width: 50px;
+    height: 50px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-animation:after {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+    right: 15px;
+}
+
+@keyframes cloudMove {
+    0% {
+        left: -120px;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.cloud-animation:nth-child(2) {
+    top: 40%;
+    animation-delay: 5s;
+    animation-duration: 30s;
+}
+
+.cloud-animation:nth-child(3) {
+    top: 70%;
+    animation-delay: 10s;
+    animation-duration: 35s;
+}
+
+/* Input group styling */
+.input-group-text {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-right: none !important;
+    border-radius: 50px 0 0 50px !important;
+    color: #fff !important;
+}
+
+.border-left-0 {
+    border-left: none !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
